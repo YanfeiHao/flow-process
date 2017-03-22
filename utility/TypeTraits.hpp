@@ -1,7 +1,5 @@
 ﻿#pragma once
 
-namespace utility {
-
 struct true_type { static constexpr bool value = true; };
 struct false_type { static constexpr bool value = false; };
 
@@ -21,4 +19,3 @@ template <class T> struct IsLvalueReference<T&> : true_type { };
 template< class T > struct RemoveReference      {typedef T type;};
 template< class T > struct RemoveReference<T&>  {typedef T type;};
 template< class T > struct RemoveReference<T&&> {typedef T type;};
-}

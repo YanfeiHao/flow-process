@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include "utility/TypeTraits.hpp"
-
-namespace utility {
+#include <utility>
 
 template<typename T>
 constexpr typename RemoveReference<T>::type&& move (T& param) noexcept
@@ -30,8 +29,6 @@ constexpr T&& forward(typename RemoveReference<T>::type& __t) noexcept
 template<typename T>
 constexpr T&& forward(typename RemoveReference<T>::type&& __t) noexcept
 {
-    static_assert(!IsLvalueReference<T>::value, " substituting _Tp is an lvalue reference type");
+    static_assert(!IsLvalueReference<T>::value, "");
     return static_cast<T&&>(__t);
-}
-
 }

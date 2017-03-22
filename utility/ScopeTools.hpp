@@ -37,7 +37,7 @@ __ScopeGuard__<fun> operator + (__ScopeGuardOnExit__, fun&& fn)
 ///     auto fp = fopen ("123.txt", "ab+");
 ///     SCOPE_EXIT { fclose (fp); };
 ///     ....
-///     fclose会被自动在退出作用域调用
+///     // fclose会被自动在退出作用域调用
 /// }
 #define SCOPE_EXIT \
     auto __ANONYMOUS_VAR__(HELPER_SCOPE_EXIT_STATE) \
