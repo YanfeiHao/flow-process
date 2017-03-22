@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "utility/typeTrait.hpp"
+#include "utility/TypeTraits.hpp"
 
 namespace utility {
 

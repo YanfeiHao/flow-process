@@ -1,11 +1,11 @@
-﻿#include "utility/ReferenceTools.hpp"
-#include <string>
+﻿#include "utility/ScopeTools.hpp"
+#include <string.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
-    std::string str;
-    const std::string const_string ("xxx");
-    utility::move (str);
-    //utility::move (std::string ("123"));
-    //utility::move (const_string);
+    auto p = malloc (100);
+
+    SCOPE_EXIT { ::free (p); };
+    return 0;
 }
